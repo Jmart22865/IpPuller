@@ -15,16 +15,17 @@
     <script src=
         "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>
-    <script src="smtp.js"></script>
+    <!-- <script src="smtp.js"></script> -->
 
     <script>
           
         var ip;
         $.get("https://ipinfo.io", function(response) {
+            Console.log(response);
             ip = response.ip;
         }, "json")
 
-        console.log(ip);
+        console.log("IP is " + ip);
 
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "/save_ip.php?ip=" + ip, true);
