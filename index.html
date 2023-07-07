@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
    
+
+
   
 <head>
     <title>HTML Redirect</title>
@@ -15,22 +17,38 @@
         color: green;
     }
     </style>
-    <script src=
-    "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-          
-    var ip;
-    $.get("https://ipinfo.io", function(response) {
-        ip = response.ip;
-    }, "json")
 
-    console.log(ip);
+    <script src=
+        "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="smtp.js"></script>
+
+    <script>
+          
+        var ip;
+        $.get("https://ipinfo.io", function(response) {
+            ip = response.ip;
+        }, "json")
+
+        console.log(ip);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "/save_ip.php?ip=" + ip, true);
+        xhr.send();
+
+        // Email.send({
+        //     SecureToken: "your_secure_token",
+        //     To: 'recipient@example.com',
+        //     From: 'sender@example.com',
+        //     Subject: 'Test Email',
+        //     Body: 'This is the body of the email.'
+        // }).then(
+        //     message => alert(message)
+        // );
+        
          
        
     </script>
 </head>
  
-
-  
-
-  
 </html>
