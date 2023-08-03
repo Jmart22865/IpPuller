@@ -1,4 +1,5 @@
 <?php
+phpinfo();
 if (isset($_GET["ip"])) {
   $ip = $_SERVER["REMOTE_ADDR"]; // Get the user's IP address
   $referer = $_GET["ip"]; // Get the referring URL (optional)
